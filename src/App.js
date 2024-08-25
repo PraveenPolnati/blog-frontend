@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ListView from './components/ListView';
+import DetailView from './components/DetailView';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+import CreatePost from './components/CreatePost';
+import ProtectedRoute from './components/ProtectedRoute';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login" component={LoginForm} />
+        <Route path="/register" component={RegisterForm} />
+        <ProtectedRoute exact path="/" component={ListView} />
+        <ProtectedRoute path="/posts/:id" component={DetailView} />
+        <ProtectedRoute path="/createpost" component={CreatePost}/>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
