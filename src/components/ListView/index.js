@@ -46,8 +46,6 @@ class ListView extends Component {
         {posts.map((post) => (
           <li key={post.id}>
             <h3>{post.title}</h3>
-            <p>Author: {post.author}</p>
-            <p>{post.formatted_created_at}</p>
             <Link to={`/posts/${post.id}`} className="post-link">View Details</Link>
           </li>
         ))}

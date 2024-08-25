@@ -84,7 +84,7 @@ class DetailView extends Component {
             <div>
               <h2>{post.title}</h2>
               <p>{post.content}</p>
-              <p>{post.formatted_created_at}</p>
+              <p>created at :- {post.formatted_created_at}</p>
               <button onClick={this.deletePost} className="delete-button">Delete Post</button>
               <button onClick={this.back} className='backBtn'>Back</button>
             </div>
