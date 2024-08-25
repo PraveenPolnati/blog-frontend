@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import CreatePost from './components/CreatePost';
 import ProtectedRoute from './components/ProtectedRoute';
+import NotFound from './components/NotFound';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <ProtectedRoute exact path="/" component={ListView} />
         <ProtectedRoute path="/posts/:id" component={DetailView} />
         <ProtectedRoute path="/createpost" component={CreatePost}/>
+        <ProtectedRoute component={NotFound}/>
       </Switch>
     </Router>
   );

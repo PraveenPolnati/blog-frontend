@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './index.css';
 
 class RegisterForm extends Component {
@@ -123,6 +124,10 @@ class RegisterForm extends Component {
   }
 
   render() {
+    const jwtToken = Cookies.get('jwt_token');
+    if (jwtToken) {
+      return <Redirect to="/" />;
+    }
     const { showSubmitError, errorMsg, registrationSuccess } = this.state;
     if (registrationSuccess) {
       return <Redirect to="/login" />;
