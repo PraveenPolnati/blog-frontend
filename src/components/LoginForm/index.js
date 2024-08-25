@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cookies from 'js-cookie';
 import { Redirect, Link } from 'react-router-dom';
-import './index.css'; // Assuming you have a CSS file for styling
+import './index.css'; 
 
 class LoginForm extends Component {
   state = {
@@ -32,7 +32,7 @@ class LoginForm extends Component {
     event.preventDefault();
     const { username, password } = this.state;
     const userDetails = { username, password };
-    const url = 'http://localhost:3002/login'; // Update this URL to your backend login endpoint
+    const url = 'http://localhost:3002/login';
     const options = {
       method: 'POST',
       headers: {

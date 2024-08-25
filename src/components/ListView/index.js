@@ -15,7 +15,7 @@ class ListView extends Component {
 
   fetchPosts = async () => {
     const token = Cookies.get('jwt_token');
-    const url = 'http://localhost:3002/posts';
+    const url = 'http://localhost:3002/posts/';
 
     const options = {
       method: 'GET',

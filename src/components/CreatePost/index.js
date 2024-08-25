@@ -37,7 +37,7 @@ class CreatePost extends Component {
     const { title, content, author } = this.state;
     const token = Cookies.get('jwt_token');
     const postDetails = { title, content, author };
-    const url = 'http://localhost:3002/posts'; // Update this URL to your backend endpoint
+    const url = 'http://localhost:3002/posts';
 
     const options = {
       method: 'POST',

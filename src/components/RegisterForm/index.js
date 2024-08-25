@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import './index.css'; // Assuming you have a CSS file for styling
+import './index.css';
 
 class RegisterForm extends Component {
   state = {
